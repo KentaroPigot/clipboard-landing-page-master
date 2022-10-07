@@ -1,0 +1,296 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+    text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+:root {
+    --clr-grey-200: hsl(201, 11%, 66%);
+    --clr-grey-600: hsl(210, 10%, 33%);
+
+    --clr-blue-200: hsl(171, 66%, 44%);
+    --clr-blue-500: hsl(233, 100%, 69%);
+
+    --box-blue-200: hsl(171, 65%, 36%);
+    --box-blue-500: hsl(233, 52%, 53%);
+
+}
+
+/* general styling */
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+section {
+    padding: 4em 0;
+}
+
+.title {
+    text-align: center;
+    color: var(--clr-grey-200);
+    margin: 2em auto;
+    max-width: 45em;
+}
+
+
+
+h1,
+h2 {
+    font-weight: 700;
+    color: var(--clr-grey-600);
+}
+
+
+.flow-content>* {
+    padding-bottom: 0.8em;
+}
+
+.container {
+    padding: 0 1.3em;
+}
+
+/*Componounts*/
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+@media (min-width: 40em) {
+    .flex {
+        flex-direction: row;
+    }
+}
+
+.history__bg {
+    position: absolute;
+}
+
+.history {
+    background-image: url(images/bg-header-mobile.png);
+    background-image: -webkit-image-set(url(images/bg-header-mobile.png) 1x,
+            url(images/bg-header-desktop.png) 2x);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn {
+    border: none;
+    background-color: var(--btn-bg-color, --clr-blue-200);
+    color: white;
+    font-weight: 700;
+    border-radius: 3em;
+    padding: 0.5em 4.5em;
+    box-shadow: 0 0.2em 0 var(--box-shadow-color, var(--box-blue-200));
+    transition: all 0.1s ease;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+.green {
+    --btn-bg-color: var(--clr-blue-200);
+    --box-shadow-color: var(--box-blue-200);
+}
+
+.blue {
+    --btn-bg-color: var(--clr-blue-500);
+    --box-shadow-color: var(--box-blue-500);
+}
+
+/*History*/
+
+.history__logo {
+    margin: 4em auto;
+}
+
+/*snippets*/
+
+
+/*supercharge*/
+
+.supercharge img {
+    margin: 0 auto;
+}
+
+/*options*/
+
+.options {
+    align-items: flex-start;
+}
+
+.options>* {
+    max-width: 20em;
+}
+
+.companies {
+    margin-top: 6em;
+}
+
+
+/*clipboard*/
+.clipboard img {
+    margin: 0 auto;
+}
+
+/*Ios mac*/
+.ios-mac {
+    margin-bottom: 5em;
+}
+
+/*footer*/
+
+footer {
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    color: var(--clr-grey-600);
+}
+
+.footer ul>*+* {
+    margin-top: 1.5em;
+}
+
+
+.social img {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+footer a {
+    color: var(--clr-grey-600);
+}
+
+footer a:hover {
+    color: var(--clr-blue-200);
+}
+
+/*media*/
+
+@media (min-width: 40em) {
+
+    .title--small {
+        font-size: 0.9em;
+    }
+
+    section {
+        padding: 3em 0;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .snippets__image {
+        margin-left: -13em;
+    }
+
+    .a-text-left {
+        text-align: left;
+        margin-left: 5em;
+    }
+
+    .snippets__container {
+        padding: 0 11em;
+    }
+
+    .supercharge__container {
+        padding: 0 8em;
+    }
+
+    .supercharge .container .title {
+        margin-bottom: 0;
+    }
+
+    .companies {
+        margin-top: 6em;
+    }
+
+    .social {
+        margin-left: 15em;
+    }
+
+    .social img {
+        display: inline-block;
+        margin: 2em 0.5em;
+    }
+}
